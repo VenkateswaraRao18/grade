@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-lato);
+
+  /* Canvas's real accent blue (#0374B5), replacing Tailwind's default sky
+   * scale app-wide — every existing sky-* class (used consistently as the
+   * accent color throughout) now resolves to Canvas-accurate tones instead
+   * of stock Tailwind sky, without touching each file that uses it. */
+  --color-sky-50: #EAF4FA;
+  --color-sky-100: #D2E8F5;
+  --color-sky-200: #A6D1EB;
+  --color-sky-300: #6FB4DC;
+  --color-sky-400: #3C9BCE;
+  --color-sky-500: #1585BF;
+  --color-sky-600: #0374B5;
+  --color-sky-700: #045D91;
+  --color-sky-800: #0A4A72;
+  --color-sky-900: #073756;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-lato), Arial, Helvetica, sans-serif;
+}
+

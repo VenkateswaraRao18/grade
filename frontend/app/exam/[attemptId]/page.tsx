@@ -23,6 +23,7 @@ import { Textarea } from "@/components/ui/Input";
 import { PageSpinner } from "@/components/ui/Spinner";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { CameraCapture } from "@/components/exam/CameraCapture";
+import { FaceWithIdSample } from "@/components/exam/FaceWithIdSample";
 import { SourceExcerpt } from "@/components/exam/SourceExcerpt";
 import { cn } from "@/lib/cn";
 
@@ -539,9 +540,13 @@ export default function LiveExamPage(props: PageProps<"/exam/[attemptId]">) {
         </div>
         <h1 className="mt-5 text-xl font-semibold tracking-tight text-white">One last step</h1>
         <p className="mt-2 max-w-sm text-sm text-zinc-400">
-          We&apos;re taking a quick photo to confirm your identity for this session.
+          We&apos;re taking a quick photo to confirm your identity for this session — make sure both
+          your face and your ID card are visible in the shot.
         </p>
-        <div className="mt-6 w-full max-w-xs rounded-[3px] border border-zinc-800 bg-zinc-900 p-4">
+        <div className="mt-6 w-full max-w-xs rounded-[3px] border border-zinc-200 bg-white py-3">
+          <FaceWithIdSample />
+        </div>
+        <div className="mt-3 w-full max-w-xs rounded-[3px] border border-zinc-800 bg-zinc-900 p-4">
           <CameraCapture onCapture={handleEndPhotoCaptured} />
         </div>
         <Button variant="ghost" onClick={() => setStage("complete")} className="mt-4">
